@@ -1,7 +1,37 @@
+import 'dart:async';
+import 'package:coloring_bookapp/main.dart';
 import 'package:flutter/material.dart';
 
-class LaunchTheAppPage extends StatelessWidget {
-  const LaunchTheAppPage({super.key});
+class LaunchTheAppPage extends StatefulWidget {
+  const LaunchTheAppPage({Key? key}) : super(key: key);
+
+  @override
+  State<LaunchTheAppPage> createState() => LaunchTheAppPageState();
+}
+
+class LaunchTheAppPageState extends State<LaunchTheAppPage> {
+  Timer? timer;
+  @override
+  void initState() {
+    super.initState();
+    timer = Timer(
+      const Duration(seconds: 2),
+      () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
