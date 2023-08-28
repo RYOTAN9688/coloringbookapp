@@ -1,3 +1,4 @@
+import 'package:coloring_bookapp/pages/launch_the_apppage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const HomeScreen(),
+      home: const LaunchTheAppPage(),
     );
   }
 }
